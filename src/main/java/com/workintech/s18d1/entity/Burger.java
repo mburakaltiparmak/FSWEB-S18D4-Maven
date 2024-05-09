@@ -27,7 +27,7 @@ public class Burger {
 
 
     public void setIsVegan(boolean b) {
-        this.isVegan=isVegan;
+        this.isVegan=!isVegan;
     }
     public boolean getIsVegan(){
         return isVegan;
