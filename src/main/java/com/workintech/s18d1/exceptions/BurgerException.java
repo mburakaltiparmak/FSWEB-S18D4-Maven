@@ -6,9 +6,8 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @Setter
-
-public class BurgerException extends RuntimeException {
-  private HttpStatus httpStatus;
+public class BurgerException extends RuntimeException{
+    private HttpStatus httpStatus;
 
     public BurgerException(String message, HttpStatus httpStatus) {
         super(message);

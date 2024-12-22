@@ -1,35 +1,34 @@
 package com.workintech.s18d1.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-@Table(name = "burger",schema = "fsweb")
+@Table(name = "burger", schema = "fsweb")
 public class Burger {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "price")
-    private double price;
+    private Double price;
     @Column(name = "is_vegan")
-    private boolean isVegan;
-
+    private Boolean isVegan;
     @Column(name = "bread_type")
     @Enumerated(EnumType.STRING)
     private BreadType breadType;
     @Column(name = "contents")
     private String contents;
-
-
-    public void setIsVegan(boolean b) {
-        this.isVegan=!isVegan;
+    public void setIsVegan(Boolean boolean1){
+        this.isVegan=boolean1;
     }
-    public boolean getIsVegan(){
+    public Boolean getIsVegan(){
         return isVegan;
     }
 }

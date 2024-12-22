@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @Slf4j
-@AllArgsConstructor
 @ControllerAdvice
+@AllArgsConstructor
 public class GlobalExceptionHandler {
     @ExceptionHandler
     public ResponseEntity<BurgerErrorResponse> handleException(BurgerException exception){
-        log.error("BurgerException occured! Exception details: ",exception.getLocalizedMessage());
+        log.error("Burger Exception occured! Exception details : " + " " + exception.getLocalizedMessage());
         BurgerErrorResponse burgerErrorResponse = new BurgerErrorResponse(exception.getLocalizedMessage());
         return new ResponseEntity<>(burgerErrorResponse,exception.getHttpStatus());
     }
     @ExceptionHandler
     public ResponseEntity<BurgerErrorResponse> handleException(Exception exception){
-        log.error("Unknown exception occured! Exception details: ",exception.getLocalizedMessage());
+        log.error("Unknown exception occured! Exception details : " + " " + exception.getLocalizedMessage());
         BurgerErrorResponse burgerErrorResponse = new BurgerErrorResponse(exception.getLocalizedMessage());
         return new ResponseEntity<>(burgerErrorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }

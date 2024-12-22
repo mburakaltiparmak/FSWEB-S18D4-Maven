@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 public class BurgerValidation {
     public static void checkName(String name){
         if(name == null || name.isEmpty()){
-            throw new BurgerException("Name is null or empty", HttpStatus.BAD_REQUEST);
+            throw new BurgerException("Name is cannot be null or empty!", HttpStatus.BAD_REQUEST);
         }
     }
 }
